@@ -142,11 +142,13 @@ src_client_perl_libCfgClientPerl_la_LIBADD += -lpthread
 
 src/client/python3/CfgClient_wrap.cxx src/client/python3/CfgClient.py: src/client/python3/CfgClient.i src/client/CfgClient.hpp
 	swig -Wall -c++ -python -py3 $<
+	sed -i -E 's/^(\s*)(std::[A-Za-z_:<>, ]+) \&([a-zA-Z_]+) = result;$$/\1\2 \3 = result;/' src/client/python3/CfgClient_wrap.cxx
 
 CLEANFILES += src/client/python3/CfgClient_wrap.cxx src/client/python3/CfgClient.py src/client/python3/_CfgClient.so
 
 src/client/perl/CfgClient_wrap.cxx src/client/perl/Configd.pm: src/client/perl/CfgClient.i src/client/CfgClient.hpp
 	swig -Wall -c++ -perl5 $<
+	sed -i -E 's/^(\s*)(std::[A-Za-z_:<>, ]+) \&([a-zA-Z_]+) = result;$$/\1\2 \3 = result;/' src/client/perl/CfgClient_wrap.cxx
 
 CLEANFILES += src/client/perl/CfgClient_wrap.cxx src/client/perl/Configd.pm
 

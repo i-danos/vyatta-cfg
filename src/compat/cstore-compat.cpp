@@ -31,8 +31,14 @@ __attribute__((noreturn))
 __attribute__((format(__printf__,1,2)))
 __attribute__((nonnull(1)));
 
-extern "C" void* Perl_get_context(void)
-__attribute__((warn_unused_result));
+/*
+ * Perl_get_context() was dropped from libperl's exported symbols in
+ * modern Perl (trixie ships 5.40); its replacement, per perl.h's own
+ * PERL_GET_CONTEXT/PERL_GET_INTERP macros, is the exported global
+ * PL_curinterp -- non-null iff an interpreter is active, same meaning
+ * this code already relied on.
+ */
+extern "C" void* PL_curinterp;
 
 /* 
  *  URI_MULT is defined by the uriparser documenation to need to be 6 when expanding breaks
@@ -554,7 +560,7 @@ void Cstore::exit_err(const char *fmt, ...) {
 void Cstore::vexit_err(const char *fmt, va_list alist) {
 	char buf[256];
 	vsnprintf(buf, 256, fmt, alist);
-	if (Perl_get_context()) {
+	if (PL_curinterp) {
 		Perl_croak_nocontext("%s", buf);
 	} else {
 		fprintf(stderr, "%s\n", buf);
