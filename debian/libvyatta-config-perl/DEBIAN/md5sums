@@ -1,0 +1,11 @@
+f9bfcca5a2db883e6de8864209688e56  opt/vyatta/share/perl5/Cstore.pm
+997028d0c07a84915c27b166af8775b4  opt/vyatta/share/perl5/Vyatta/Config.pm
+23bf8437c29f59a64069004cfcef8f99  opt/vyatta/share/perl5/Vyatta/Config/Parse.pm
+2c11a731f0825aaf9afd4e78eb351814  opt/vyatta/share/perl5/Vyatta/ConfigLoad.pm
+0b812b4fd0f7a89571e4728be49ee4f6  opt/vyatta/share/perl5/auto/Cstore/.packlist
+1bebdfc2049ee59817c349f5868c79db  opt/vyatta/share/perl5/auto/Cstore/Cstore.so
+291614aae92d8ab06f904171bb146f34  opt/vyatta/share/perl5/auto/Cstore/autosplit.ix
+8e250d60f55c31f3845776e213b248ec  usr/lib/libvyatta-cstore-compat.so.1.0.0
+2795148813178613e0f5ebf90849b418  usr/share/doc/libvyatta-config-perl/changelog.gz
+a15ff0e528626d76c0ea49287a00f755  usr/share/doc/libvyatta-config-perl/copyright
+a4abf30e8052d7b5e51369744c4dfbe8  usr/share/lintian/overrides/libvyatta-config-perl
