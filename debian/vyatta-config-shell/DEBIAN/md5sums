@@ -1,6 +1,0 @@
-30913cef528b5c767957a1242975bb04  opt/vyatta/bin/configure
-8532e2f0bf5997c7056472e843c518fe  opt/vyatta/bin/list-configuration-files
-3634ab2a694ce210be23baa46e2933f6  opt/vyatta/share/vyatta-cfg/functions/interpreter/vyatta-cfg-run
-68f7b501bfe4b05277a3230a66d719d3  opt/vyatta/share/vyatta-cfg/functions/script-wrapper
-2795148813178613e0f5ebf90849b418  usr/share/doc/vyatta-config-shell/changelog.gz
-a15ff0e528626d76c0ea49287a00f755  usr/share/doc/vyatta-config-shell/copyright
