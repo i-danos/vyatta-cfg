@@ -74,14 +74,15 @@ append_action(char *text)
   int tlen = strlen(text);
 
   if (((action_ptr + tlen) - action_buf) >= action_buflen) {
+    size_t action_off = action_ptr - action_buf;
     char *new_action_buf = realloc(action_buf, action_buflen + BUF_INCREMENT);
     if (!new_action_buf) {
       printf("Failed to allocate memory\n");
       exit(-1);
     }
     action_buflen += BUF_INCREMENT;
-    action_ptr += new_action_buf - action_buf;
     action_buf = new_action_buf;
+    action_ptr = action_buf + action_off;
   }
   strcpy(action_ptr, text);
   action_ptr += tlen;
@@ -92,14 +93,15 @@ append_str(char *text)
 {
   int tlen = strlen(text);
   if (((str_ptr + tlen) - str_buf) >= str_buflen) {
+    size_t str_off = str_ptr - str_buf;
     char *new_str_buf = realloc(str_buf, str_buflen + BUF_INCREMENT);
     if (!new_str_buf) {
       printf("Failed to allocate memory\n");
       exit(-1);
     }
     str_buflen += BUF_INCREMENT;
-    str_ptr += new_str_buf - str_buf;
     str_buf = new_str_buf;
+    str_ptr = str_buf + str_off;
   }
   strcpy(str_ptr, text);
   str_ptr += tlen;
